@@ -1,6 +1,6 @@
 ---
 resources:
-- daemonset.yaml
+  - daemonset.yaml
 
 configMapGenerator:
-- name: localingress-config
+  - name: localingress-config
