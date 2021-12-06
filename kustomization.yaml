@@ -2,5 +2,18 @@
 resources:
   - daemonset.yaml
 
+configurations:
+  - config.yaml
+
+commonLabels:
+  app: localingress
+namespace: localingress
+
+generatorOptions:
+  labels:
+    app: localingress
+
 configMapGenerator:
-  - name: localingress-config
+- name: localingress-config
+  files:
+    - haproxy.cfg=config/localingress.cfg
