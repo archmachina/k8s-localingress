@@ -14,6 +14,6 @@ generatorOptions:
     app: localingress
 
 configMapGenerator:
-- name: localingress-config
-  files:
-    - haproxy.cfg=config/localingress.cfg
+  - name: localingress-config
+    files:
+      - haproxy.cfg=config/localingress.cfg
