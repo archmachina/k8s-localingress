@@ -3,9 +3,6 @@ resources:
   - namespace.yaml
   - daemonset.yaml
 
-configurations:
-  - config.yaml
-
 commonLabels:
   app: localingress
 namespace: localingress

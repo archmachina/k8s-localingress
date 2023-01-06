@@ -21,12 +21,15 @@ spec:
             name: localingress-config
       containers:
         - name: ingress
-          image: docker.io/library/haproxy:2.2.4
+          image: docker.io/library/haproxy:2.7.1
+          env:
+            - name: INGRESS_HOST
+              value: "ingress-nginx-controller.ingress-nginx.svc.cluster.local"
           volumeMounts:
             - name: localingress-config
               mountPath: "/usr/local/etc/haproxy/"
           ports:
-            - containerPort: 443
+            - containerPort: 8443
               hostPort: 443
-            - containerPort: 80
+            - containerPort: 8080
               hostPort: 80
